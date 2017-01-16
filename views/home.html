@@ -1,0 +1,122 @@
+<div class="main-content">
+    <!-- Trending line -->
+    <div class="trending-posts-line">
+        <div class="container">
+            <div class="trending-line">
+                <div class="trending-now"><strong>Trending</strong> Now</div>
+                <div class="tl-slider">
+                    <div ng-repeat="article in articles | limitTo: 4:0"><a href="">{{article.title}}</a></div>
+                </div>
+                <div class="tl-slider-control"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Trending line END -->
+    
+    <!-- Main posts -->
+    <div class="main-posts-2">
+        <div class="mp-section">
+            <div ng-repeat="article in articles | limitTo: 3:0">
+                <div class="one-third sm-half mb-ls-full">
+                    <article class="post post-tp-12">
+                        <figure>
+                            <a href=""><img ng-src="{{imgBaseUrl + article.image_uri}}" height="350" width="376" alt="hivisasa news" class="flex" /></a>
+                        </figure>
+                        <div class="ptp-1-overlay">
+                            <div class="ptp-1-data">
+                                <a href="" class="category-tp-1" ng-hide="article.county">{{getCategory(article.page_uri)}}</a>
+                                <a href="" class="category-tp-1" ng-show="article.county">{{article.county}}</a>
+                                <h2 class="title-2"><a href="#1">{{article.title}}</a></h2>
+                                <div class="meta-tp-1">
+                                    <div class="ptp-1-date"><a href="">{{dateFormat(article.publish_date)}}</a></div>
+                                    <div class="ptp-1-views"><a href=""><i class="li_pen"></i><span>By {{article.writer.name}}</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main posts END -->
+    
+    <div class="section">
+        <div class="trend-pst">
+            <div class="pst-block">
+                <div class="pst-block-head">
+                    <h2 class="title-4"><strong>Latest</strong> Posts</h2>
+                    <div class="filters">
+                        <ul class="filters-list-1 xs-hide">
+                            <li class="active"><a href="/">all news</a></li>
+                                <li><a href="/location/all/politics">politics</a></li>
+                                <li><a href="/location/all/opinions">opinions</a></li>
+                                <li><a href="/location/all/business">business</a></li>
+                                <li><a href="/location/all/agriculture">agriculture</a></li>
+                                <li><a href="/location/all/crime">crime</a></li>
+                                <li><a href="/location/all/sports">sports</a></li>
+                                <li><a href="/location/all/entertainment">entertainment</a></li>
+                        </ul>
+                        <div class="filters-more">
+                            <div class="filters-btn js-fl-btn">
+                                <i class="li_settings"></i>
+                                <div class="filters-drop js-fl-block">
+                                    <i class="arr"></i>
+                                    <ul>
+                                        <li><a href="/location/all/education">education</a></li>
+                                        <li><a href="/location/all/environment">environment</a></li>
+                                        <li><a href="/location/all/transport">transport</a></li>
+                                        <li><a href="/location/all/health">health</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pst-block-main">
+                    <div class="col-row">
+                        <div ng-repeat="article in articles | limitTo: 30:3">
+                            <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                            <div class="col-one-quarter" ng-click="getArticle(article.nid)">
+                                <article class="post post-tp-4">
+                                    <figure>
+                                        <a href="">
+                                            <img ng-src="{{imgBaseUrl + article.image_uri}}" height="186" width="260" alt="hivisasa News" class="flex" />
+                                        </a>
+                                        <div class="ptp-4-overlay">
+                                            <div class="ptp-4-data">
+                                                <a href="">
+                                                    <i class="li_eye"></i>{{article.page_view}}
+                                                </a>
+                                                <a href="">
+                                                    <i class="li_bubble"></i>{{article.facebook_share}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                    <h3 class="title-3"><a href="">{{article.title}}</a></h3>
+                                    <div class="meta-tp-2">
+                                        <div class="date"><span>{{dateFormat(article.publish_date)}}</span></div>
+                                        <div class="category">
+                                            <a href=""  ng-show="currlocation">
+                                                <i class="li_pen"></i>
+                                                <span>{{article.writer.name}}</span>
+                                            </a>
+                                            <a href="" ng-hide="currlocation">
+                                                <i class="li_location"></i>
+                                                <span>{{article.county}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pst-block-foot">
+                    <a href="">More recent posts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+</div>

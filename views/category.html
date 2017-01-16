@@ -1,0 +1,240 @@
+<div class="main-content">
+    <!-- Page head tile -->
+    <div class="page-head-tile">
+        <div class="container">
+            <div class="breadcrumbs-block">
+                <ul class="breadcrumbs">
+                    <li class="bc-item">
+                        <a class="capitalize" href="">{{currlocation}}</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="bc-item">
+                        <a class="capitalize" href="">{{category}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-title">
+                <h1 class="title-16 capitalize"><strong>{{category}}</strong> Posts</h1>
+                <div class="filters">
+                    <ul class="filters-list-1">
+                        <li class="active"><a href="/">all news</a></li>
+                        <li><a href="/location/{{currlocation}}/politics">politics</a></li>
+                        <li><a href="/location/{{currlocation}}/opinions">opinions</a></li>
+                        <li><a href="/location/{{currlocation}}/business">business</a></li>
+                        <li><a href="/location/{{currlocation}}/agriculture">agriculture</a></li>
+                        <li><a href="/location/{{currlocation}}/crime">crime</a></li>
+                        <li><a href="/location/{{currlocation}}/sports">sports</a></li>
+                        <li><a href="/location/{{currlocation}}/entertainment">entertainment</a></li>
+                        <li><a href="/location/{{currlocation}}/events">events</a></li>
+                    </ul>
+                    <div class="filters-more">
+                        <div class="filters-btn js-fl-btn">
+                            <i class="li_settings"></i>
+                            <div class="filters-drop js-fl-block">
+                                <i class="arr"></i>
+                                <ul>
+                                    <li><a href="/location/{{currlocation}}/education">education</a></li>
+                                    <li><a href="/location/{{currlocation}}/environment">environment</a></li>
+                                    <li><a href="/location/{{currlocation}}/transport">transport</a></li>
+                                    <li><a href="/location/{{currlocation}}/health">health</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page head tile END -->
+    <!-- Main posts -->
+    <div class="main-posts-3">
+        <div class="mp-section">
+            <div ng-repeat="latestArticle in latestArticles | limitTo: 1:0">
+            <div class="half sm-full">
+                <article class="post post-tp-12">
+                    <figure>
+                        <a href="/article/{{latestArticle.nid}}">
+                            <img ng-src="{{imgBaseUrl + latestArticle.image_uri}}" height="500" width="568" alt="hivisasa News" class="flex" />
+                        </a>
+                    </figure>
+                    <div class="ptp-1-overlay">
+                        <div class="ptp-1-data">
+                            <a href="" class="category-tp-1" ng-hide="latestArticle.county">{{getCategory(latestArticle.page_uri)}}</a>
+                            <a href="" class="category-tp-1" ng-show="latestArticle.county">{{latestArticle.county}}</a>
+                            <h2 class="title-13"><a href="/article/{{latestArticle.nid}}">{{latestArticle.title}}</a></h2>
+                            <div class="meta-tp-1">
+                                <div class="ptp-1-date"><a href="">{{dateFormat(latestArticle.publish_date)}}</a></div>
+                                <div class="ptp-1-views"><a href=""><i class="li_eye"></i><span>187</span></a></div>
+                                <div class="ptp-1-comments"><a href=""><i class="li_bubble"></i><span>5</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            </div>
+            <div class="half sm-full">
+                <div ng-repeat="latestArticle in latestArticles | limitTo: 2:1">
+                <div class="half">
+                    <article class="post post-tp-12">
+                        <figure>
+                            <a href="/article/{{latestArticle.nid}}">
+                            <img ng-src="{{imgBaseUrl + latestArticle.image_uri}}" height="248" width="282" alt="hivisasa News" class="flex" />
+                            </a>
+                        </figure>
+                        <div class="ptp-1-overlay">
+                            <div class="ptp-1-data">
+                                <a href="" class="category-tp-1" ng-hide="latestArticle.county">{{getCategory(latestArticle.page_uri)}}</a>
+                                <a href="" class="category-tp-1" ng-show="latestArticle.county">{{latestArticle.county}}</a>
+                                <h2 class="title-15"><a href="/article/{{latestArticle.nid}}">{{latestArticle.title}}</a></h2>
+                                <div class="meta-tp-1">
+                                    <div class="ptp-1-date"><a href="">{{dateFormat(latestArticle.publish_date)}}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                </div>
+                <div ng-repeat="latestArticle in latestArticles | limitTo: 2:3">
+                <div class="half">
+                    <article class="post post-tp-12">
+                        <figure>
+                            <a href="/article/{{latestArticle.nid}}">
+                            <img ng-src="{{imgBaseUrl + latestArticle.image_uri}}" height="248" width="282" alt="hivisasa News" class="flex" />
+                            </a>
+                        </figure>
+                        <div class="ptp-1-overlay">
+                            <div class="ptp-1-data">
+                                <a href="" class="category-tp-1" ng-hide="latestArticle.county">{{getCategory(latestArticle.page_uri)}}</a>
+                                <a href="" class="category-tp-1" ng-show="latestArticle.county">{{latestArticle.county}}</a>
+                                <h2 class="title-15"><a href="/article/{{latestArticle.nid}}">{{latestArticle.title}}</a></h2>
+                                <div class="meta-tp-1">
+                                    <div class="ptp-1-date"><a href="">{{dateFormat(latestArticle.publish_date)}}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main posts END -->
+    <div class="section">
+        <div class="row">
+            <div class="content">
+                <div class="pst-block">
+                    <div class="pst-block-main">
+                        <div class="posts">
+                            <article class="post post-tp-26" ng-repeat="latestArticle in latestArticles | limitTo: 7:5">
+                                <div class="date-tp-3">
+                                    {{getDate(latestArticle.publish_date)}}<span>{{getMonth(latestArticle.publish_date)}}</span>
+                                </div>
+                                <figure>
+                                    <a href="/article/{{latestArticle.nid}}">
+                                        <img ng-src="{{imgBaseUrl + latestArticle.image_uri}}" style="height: 206px;  width: 273px;" alt="hivisasa news" />
+                                    </a>
+                                </figure>
+                                <h3 class="title-5"><a href="/article/{{latestArticle.nid}}">{{latestArticle.title}}</a></h3>
+                                <div class="meta-tp-2">
+                                    <div class="date"><span>{{dateFormat(latestArticle.publish_date)}}</span></div>
+                                    <div class="category">
+                                        <a href=""><i class="li_user"></i><span>{{latestArticle.writer.name}}</span></a>
+                                    </div>
+                                </div>
+                                <p class="p">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium dolore mque laudantium, totamrem aperiam, eaque ipsa quae ab illo inventore veritatis et </p>
+                                <hr class="xs-hr">
+                                <div class="meta-tp-3">
+                                    <div class="views">
+                                        <a href="">
+                                            <i class="li_eye"></i>{{latestArticle.facebook_share}}
+                                        </a>
+                                    </div>
+                                    <div class="comments">
+                                        <a href="">
+                                            <i class="li_bubble"></i>{{latestArticle.page_view}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- Page nav -->
+                        <div class="page-nav">
+                            <a href="" class="pn-item">
+                                <i class="page-nav-prev-ic"></i>
+                            </a>
+                            <a href="" class="pn-item current mb-pt-hide">1</a>
+                            <a href="" class="pn-item mb-pt-hide">2</a>
+                            <a href="" class="pn-item mb-pt-hide">3</a>
+                            <span class="extend mb-pt-hide">...</span>
+                            <a href="" class="pn-item mb-pt-hide">7</a>
+                            <a href="" class="pn-item">
+                                <i class="page-nav-next-ic"></i>
+                            </a>
+                            <span class="page-count">Page 1 of 7</span>
+                        </div>
+                        <!-- Page nav END -->
+                    </div>
+                </div>
+            </div>
+            <aside class="side-bar sticky-wrap">
+                <div class="pst-block">
+                    <div class="pst-block-head">
+                        <h2 class="title-4"><strong>Stay</strong> Connected</h2>
+                    </div>
+                    <div class="pst-block-main">
+                        <div class="social-tp-1">
+                            <ul class="social-list">
+                                <li class="fb">
+                                    <a href="">
+                                        <span class="soc-ic">
+                                            <i class="fa fa-facebook"></i>
+                                        </span> 1526 Fans
+                                        <span class="soc-btn">Like It</span>
+                                    </a>
+                                </li>
+                                <li class="tw">
+                                    <a href="">
+                                        <span class="soc-ic">
+                                            <i class="fa fa-twitter"></i>
+                                        </span> 541 Followers
+                                        <span class="soc-btn">Follow Us</span>
+                                    </a>
+                                </li>
+                                <li class="gp">
+                                    <a href="">
+                                        <span class="soc-ic">
+                                            <i class="fa fa-google-plus"></i>
+                                        </span> 421 Friends
+                                        <span class="soc-btn">Follow Us</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-banner">
+                    <div class="banner-inner">
+                        <a href="/">
+                        <img src="/img/sb-banner-img.jpg" height="270" width="320" alt="hivisasa news" class="adaptive" />
+                        </a>
+                    </div>
+                </div>
+                <div class="sbsb-block-1">
+                    <h4 class="title-8"><strong>Subscribe</strong> to hivisasa</h4>
+                    <div class="sbsb-form-1">
+                        <div class="sbsb-form">
+                            <div class="sbsb-input">
+                                <span class="sbsb-icon"><i class="li_mail"></i></span>
+                                <input type="email" placeholder="E-mail">
+                            </div>
+                            <div class="sbsb-btn">
+                                <button>subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+</div>

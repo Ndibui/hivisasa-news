@@ -1,0 +1,232 @@
+<div class="main-content">
+    <!-- Page head tile -->
+    <div class="page-head-tile">
+        <div class="container">
+            <div class="breadcrumbs-block">
+                <ul class="breadcrumbs">
+                    <li class="bc-item">
+                        <a href="" class="capitalize">{{article.location}}</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="bc-item">
+                        <a href="" class="capitalize">{{article.category}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Page head tile END -->
+    <div class="section">
+        <div class="row">
+            <div class="content">
+                <div class="pst-block">
+                    <div class="pst-block-main">
+                        <div class="post-content">
+                            <article>
+                                <div class="post-main-img">
+                                    <img ng-src="{{imgBaseUrl + article.image_uri}}" height="442" width="750" alt="hivisasa news" class="flex" />
+                                </div>
+                                <a href="" class="category-tp-1" tabindex="0">{{article.category}}</a>
+                                <h2 class="title-21">{{article.title}}</h2>
+                                <div class="meta-tp-5">
+                                    <div class="author-tp-2">
+                                        <span class="photo">
+                                            <i class="li_user" style="margin: 4px;"></i>
+                                        </span>{{author.name}}
+                                    </div>
+                                    <div class="date-tp-4"><i class="li_clock"></i>{{dateFormat(article.publish_date)}}</div>
+                                    <div class="ptp-1-views">
+                                        <a href=""><i class="li_eye"></i><span> {{article.page_view}} </span></a>
+                                    </div>
+                                    <div class="ptp-1-comments">
+                                        <a href=""><i class="li_bubble"></i><span> {{article.facebook_share}} </span></a>
+                                    </div>
+                                </div>
+                                <div class="post-sharing-tp-1">
+                                    <ul>
+                                        <li class="fb"><a href=""><i class="fa fa-facebook"></i><span class="mb-pt-hide">Facebook</span></a></li>
+                                        <li class="tw"><a href=""><i class="fa fa-twitter"></i><span class="mb-pt-hide">Twitter</span></a></li>
+                                        <li class="gp"><a href=""><i class="fa fa-google-plus"></i><span class="mb-pt-hide">Google+</span></a></li>
+                                    </ul>
+                                </div>
+                                <div ng-bind-html="handleHtmlTags(article.body)"></div>
+                                <blockquote class="bq-tp-2">
+                                    <p> {{article.image_caption}} </p>
+                                </blockquote>
+                            </article>
+                            <div class="post-tags">
+                                <ul class="post-tags-list">
+                                    <li><a href="">{{article.location}}</a></li>
+                                    <li><a href="">{{article.category}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="sharing-block">
+                                <div class="sharing-title">Share this news post!</div>
+                                <div class="post-sharing-tp-2">
+                                    <ul>
+                                        <li class="fb"><a href=""><i class="fa fa-facebook"></i><span class="mb-pt-hide">Facebook</span></a></li>
+                                        <li class="tw"><a href=""><i class="fa fa-twitter"></i><span class="mb-pt-hide">Twitter</span></a></li>
+                                        <li class="gp"><a href=""><i class="fa fa-google-plus"></i><span class="mb-pt-hide">Google+</span></a></li>
+                                    </ul>
+                                    <div class="comments">
+                                        <i class="li_bubble"></i>5 Comments
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author-box-1">
+                                <div class="author-photo">
+                                    <img src="/img/user.png" height="95" width="95" alt="hivisasa news">
+                                </div>
+                                <div class="author-name">{{author.name}}</div>
+                                <div class="author-profession">Journalist</div>
+                                <div class="author-description">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totamrem aperiam, eaque ipsa quae ab illo inventore veritatis</div>
+                                <div class="author-social">
+                                    <ul>
+                                        <li class="tw"><a href="">
+                                            <i class="fa fa-twitter"></i>
+                                        </a></li>
+                                        <li class="fb"><a href="">
+                                            <i class="fa fa-facebook"></i>
+                                        </a></li>
+                                        <li class="gp"><a href="">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a></li>
+                                        <li class="in"><a href="">
+                                            <i class="fa fa-instagram"></i>
+                                        </a></li>
+                                        <li class="dr"><a href="">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pst-box">
+                                <div class="pst-box-head">
+                                    <div class="title-blc-1">
+                                        <h4>Related <span>Posts</span></h4>
+                                    </div>
+                                    <div class="navs js-pst-navs"></div>
+                                </div>
+                                <div class="pst-box-main">
+                                    <div class="pst-box-inner js-pst-block-2">
+                                        <div ng-repeat="relatedArticle in relatedarticles">
+                                        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+                                        <div class="one-third">
+                                            <article class="post post-tp-30">
+                                                <figure>
+                                                    <a href="/article/{{relatedArticle.nid}}">
+                                                        <img ng-src="{{imgBaseUrl + relatedArticle.image_uri}}" width="222" height="150" alt="hivisasa news" class="flex" />
+                                                    </a>
+                                                    <div class="ptp-30-overlay">
+                                                        <div class="ptp-30-data">
+                                                            <a href="">
+                                                                <i class="li_eye"></i>187
+                                                            </a>
+                                                            <a href="">
+                                                                <i class="li_bubble"></i>187
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </figure>
+                                                <h3 class="title-6"><a href="/article/{{relatedArticle.nid}}"> {{relatedArticle.title}} </a></h3>
+                                            </article>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="side-bar">
+                <div class="js-sidebar">
+                    <div class="pst-block">
+                        <div class="pst-block-head">
+                            <h2 class="title-4"><strong>Stay</strong> Connected</h2>
+                        </div>
+                        <div class="pst-block-main">
+                            <div class="social-tp-1">
+                                <ul class="social-list">
+                                    <li class="fb">
+                                        <a href="">
+                                            <span class="soc-ic">
+                                                <i class="fa fa-facebook"></i>
+                                            </span> 1526 Fans
+                                            <span class="soc-btn">Like It</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw">
+                                        <a href="">
+                                            <span class="soc-ic">
+                                                <i class="fa fa-twitter"></i>
+                                            </span> 541 Followers
+                                            <span class="soc-btn">Follow Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="gp">
+                                        <a href="">
+                                            <span class="soc-ic">
+                                                <i class="fa fa-google-plus"></i>
+                                            </span> 421 Friends
+                                            <span class="soc-btn">Follow Us</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sb-banner">
+                        <div class="banner-inner">
+                            <a href="/">
+                            <img src="/img/sb-banner-img.jpg" height="270" width="320" alt="hivisasa news" class="adaptive" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="recent-nws">
+                        <div class="pst-block">
+                            <div class="pst-block-head">
+                                <h2 class="title-4"><strong>Recent</strong> News</h2>
+                                <div class="all-sb">
+                                    <a href="/">all news</a>
+                                </div>
+                            </div>
+                            <div class="pst-block-main">
+                                <div class="js-csp-block js-tab-slider">
+                                    <div>
+                                        <article class="post post-tp-9" ng-repeat="recentArticle in recentarticles">
+                                            <figure>
+                                                <a href="/article/{{recentArticle.nid}}">
+                                                    <img ng-src="{{imgBaseUrl + recentArticle.image_uri}}" alt="hivisasa news" class="flex" style="width:115px; height: 85px;">
+                                                </a>
+                                            </figure>
+                                            <h3 class="title-6"><a href="/article/{{recentArticle.nid}}">{{recentArticle.title}}</a></h3>
+                                            <div class="date-tp-2">{{dateFormat(recentArticle.publish_date)}}</div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pst-block-foot">
+                                <div class="js-sbr-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sbsb-block-1">
+                        <h4 class="title-8"><strong>Subscribe</strong> to hivisasa</h4>
+                        <div class="sbsb-form-1">
+                            <div class="sbsb-form">
+                                <div class="sbsb-input">
+                                    <span class="sbsb-icon"><i class="li_mail"></i></span>
+                                    <input type="email" placeholder="E-mail">
+                                </div>
+                                <div class="sbsb-btn">
+                                    <button>subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
