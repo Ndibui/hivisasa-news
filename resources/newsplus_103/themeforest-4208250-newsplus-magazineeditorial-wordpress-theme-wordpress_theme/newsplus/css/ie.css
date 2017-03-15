@@ -1,0 +1,18 @@
+/**
+ * Internet Explorer specific stylesheet
+ *
+ * Include IE specific hacks in this file.
+ */
+
+#page {
+	width: 86.6666em !important;
+}
+
+.wrap {
+	width: 83.3333em !important;
+}
+ 
+.secondary-nav li ul,
+.primary-nav li ul {
+ 	border: 1px solid #e5e5e5;
+}

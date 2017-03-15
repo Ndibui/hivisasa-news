@@ -1,0 +1,204 @@
+/**
+ * responsive.css
+ *
+ * Contains media queries and fallback styles for various device widths.
+ */
+
+#page {
+	width: 96.153846%;
+	max-width: 86.6666em;
+}
+
+.wrap {
+	width: 96.153846%;
+	max-width: 83.3333em;
+}
+
+/* ---------------------------------------------------------------
+ * 1. TABLET
+ * CSS fallback for device width 768px or below
+ * ------------------------------------------------------------ */
+
+@media only screen and (max-width: 768px) {
+
+	.secondary-nav,
+	#search-bar,
+	#callout-bar,
+	#callout-bar.callout-left,
+	.brand,
+	.header-widget-area,
+	#primary,
+	#primary.full-width,
+	#container,
+	#sidebar,
+	#sidebar.sb-left,
+	.full-width .one-fourth,
+	#secondary .one-fourth,
+	#secondary .one-fourth.last,
+	.buddyPress #content,
+	.three-fourth,
+	.two-third,
+	.one-third,
+	.three-eighth,
+	.one-fourth,
+	.full-width .three-fourth,
+	.full-width .two-third,
+	.full-width .one-third,
+	.full-width .three-eighth,
+	.full-width .one-fourth,
+	.three-col li,
+	.full-width .three-col li {
+		float: none;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 1.5em;
+		display: block;
+	}
+
+	.brand {
+		margin-bottom: 2em;
+	}
+
+	#secondary .one-fourth,
+	#secondary .one-fourth.last {
+		margin-bottom: 0;
+	}
+
+	.secondary-nav,
+	#callout-bar,
+	#callout-bar.callout-left,
+	#search-bar {
+		margin-bottom: 0;
+		text-align: left;
+	}
+
+	#search-bar .searchbox {
+		padding: 0;
+	}
+
+	.header-widget-area {
+		text-align: left;
+		margin-bottom: 0.75em;
+	}
+
+	#respond form input[type="text"],
+	#respond form textarea,
+	#contactform input[type="text"],
+	#contactform textarea {
+		max-width: 100%;
+	}
+
+	.commentlist li li {
+		padding-left: 0
+	}
+
+	.secondary-nav .sec-menu,
+	.primary-nav ul.nav-menu,
+	.primary-nav div.nav-menu > ul {
+		display: none;
+	}
+
+	.primary-nav {
+		background: #fff;
+		border: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.primary-nav select {
+		display: block;
+	}
+
+	.menu-drop {
+		position: relative;
+	}
+}
+
+
+/* ---------------------------------------------------------------
+ * 2. MOBILE
+ * CSS fallback for device width 480px or below
+ * ------------------------------------------------------------ */
+
+@media only screen and (max-width: 480px) {
+
+	.two-col li,
+	.entry-grid {
+		float: none;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 1.5em;
+		display: inline-block;
+	}
+
+	.column,
+	.full,
+	.three-fourth,
+	.two-third,
+	.half,
+	.one-third,
+	.three-eighth,
+	.one-fourth,
+	.full-width .column,
+	.full-width .full,
+	.full-width .three-fourth,
+	.full-width .two-third,
+	.full-width .half,
+	.full-width .one-third,
+	.full-width .three-eighth,
+	.full-width .one-fourth,
+	.entry-list-left,
+	.entry-list-right,
+	.notes-left,
+	.notes-right {
+		float: none;
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
+		display: inline-block;
+		text-align: left;
+	}
+
+	.entry-list-left {
+		margin-bottom: 1.5em;
+	}
+
+	.flex-caption h1,
+	.flex-caption h2,
+	.entry-list h3 {
+		font-size: 1.5em;
+		line-height: 1.333;
+		margin-bottom: 0.6666em;
+	}
+
+	ul.thumb-style {
+		padding: 0;
+	}
+
+	ul.thumb-style li {
+		float: none;
+		width: 100%;
+		margin: 0;
+		padding: 0.75em 0;
+		border-bottom: 1px solid #e9e9e9;
+	}
+
+	ul.thumb-style li:last-child {
+		border: none;
+	}
+
+	ul.thumb-style li h4 {
+		font-size: 1em;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	ul.thumb-style li a.rp-thumb {
+		display: none;
+	}
+
+	.option-panel {
+		display: none;
+	}
+}

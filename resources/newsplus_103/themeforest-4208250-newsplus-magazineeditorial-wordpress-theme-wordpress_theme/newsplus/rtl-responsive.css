@@ -1,0 +1,44 @@
+/**
+ * rtl-responsive.css
+ *
+ * Contains media queries and fallback styles for RTL version on various device widths.
+ */
+
+/* ---------------------------------------------------------------
+ * CSS fallback for device width 768px or below
+ * ------------------------------------------------------------ */
+
+@media only screen and (max-width: 768px) {
+
+	.secondary-nav,
+	#callout-bar,
+	#callout-bar.callout-left,
+	#search-bar,
+	.header-widget-area,
+	.column,
+	.full,
+	.three-fourth,
+	.two-third,
+	.half,
+	.one-third,
+	.three-eighth,
+	.one-fourth,
+	.full-width .column,
+	.full-width .full,
+	.full-width .three-fourth,
+	.full-width .two-third,
+	.full-width .half,
+	.full-width .one-third,
+	.full-width .three-eighth,
+	.full-width .one-fourth,
+	.entry-list-left,
+	.entry-list-right,
+	.notes-left,
+	.notes-right {
+		text-align: right;
+	}
+
+	.commentlist li li {
+		padding-right: 0
+	}
+}
